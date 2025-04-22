@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agenda de Eventos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #4CAF50;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #ccc;
+      margin-bottom: 30px;
+    }
+
+    input, textarea, select, button {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px #aaa;
+    }
+
+    footer {
+      text-align: center;
+      background: #eee;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agenda de Eventos</h1>
+    <p>Eventos Culturais, Escolares e Esportivos</p>
+  </header>
+
+  <main>
+    <h2>Próximos Eventos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Nome do Evento</th>
+          <th>Local</th>
+          <th>Categoria</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>10/05/2025</td>
+          <td>Festa Cultural da Primavera</td>
+          <td>Praça Central</td>
+          <td>Cultural</td>
+        </tr>
+        <tr>
+          <td>15/06/2025</td>
+          <td>Campeonato Escolar de Futebol</td>
+          <td>Ginásio Municipal</td>
+          <td>Esportivo</td>
+        </tr>
+        <tr>
+          <td>22/07/2025</td>
+          <td>Feira de Ciências</td>
+          <td>Escola João Silva</td>
+          <td>Escolar</td>
+        </tr>
+        <!-- Adicione mais linhas aqui manualmente -->
+      </tbody>
+    </table>
+
+    <h2>Inscreva-se em um Evento</h2>
+    <form>
+      <label for="nome">Nome Completo:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="evento">Evento de Interesse:</label>
+      <select id="evento" name="evento">
+        <option value="">-- Selecione um Evento --</option>
+        <option value="cultural">Festa Cultural da Primavera</option>
+        <option value="esportivo">Campeonato Escolar de Futebol</option>
+        <option value="escolar">Feira de Ciências</option>
+      </select>
+
+      <label for="mensagem">Mensagem (opcional):</label>
+      <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+
+      <button type="submit">Enviar Inscrição</button>
+    </form>
+
+    <h2>Galeria de Eventos</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x200?text=Evento+1" alt="Evento 1">
+      <img src="https://via.placeholder.com/300x200?text=Evento+2" alt="Evento 2">
+      <img src="https://via.placeholder.com/300x200?text=Evento+3" alt="Evento 3">
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Agenda de Eventos. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
