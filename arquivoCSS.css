@@ -1,229 +1,387 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('img/imagem.fundo.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #F8F5EC;
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: url('img/imagem.fundo.jpeg') no-repeat center center fixed;
-        background-size: cover;
-        color:#F8F5EC;
-        
-    }
+}
 
-    .cabecalho-imagem {
-        background-image: url('img/Banner_serra.png');
-        background-size: cover;
-        background-position: center;
-        font-family: 'Winky Rough', sans-serif;
-        height: 220px;
-        padding: 0;
-        color: rgb(0, 182, 9);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-shadow: 1px 1px 3px #000000;
-        margin-bottom: 0px;
-    }
-    
-    .cabecalho-texto {
-        text-align: center;
-        padding: 10px 12px;
-        background-color: transparent;
-        margin-top: 0px;
-    }
-    
-    .cabecalho-texto h2 {
-        font-size: 3rem;
-        font-family: 'Winky Rough', cursive;
-        color: #4CAF50;
-        padding: 10px 20px;
-        margin: 0 auto 10px;
-        display: inline-block;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    
-        /* Remove o fundo branco e efeitos */
-        background: none;
-        border-radius: 0;
-        box-shadow: none;
-    }
-    
-    .cabecalho-imagem::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: rgba(0, 0, 0, 0.3); /* escurece um pouco o fundo */
-        z-index: 0;
-    }
-    
-    .cabecalho-imagem {
-        position: relative;
-        z-index: 1;
-    }
-    
-    .cabecalho-texto h2 {
-        font-size: 3rem;
-        color: #4CAF50;
-        margin-bottom: 4px;
-    }
+.cabecalho-imagem {
+    background-image: url('img/Banner_serra.png');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    height: 220px;
+    padding: 0;
+    color: rgb(0, 182, 9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 3px #000000;
+    margin-bottom: 0px;
+}
 
-    .cabecalho-texto p {
-        font-size: 1.2rem;
-        color: #333;
-        margin-top: 0;
-    }
+.cabecalho-texto {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 10px 12px;
+    background-color: transparent;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
 
-    .cards-container {
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-        gap: 16px;
-        padding: 0px 20px;
-        scroll-behavior: smooth;
-        scrollbar-width: thin;
-        scrollbar-color: #ccc transparent;
-    }
+.cabecalho-texto h2 {
+    font-size: 3rem;
+    font-family: Arial, sans-serif;
+    color: #4CAF50;
+    padding: 10px 20px;
+    margin: 0 auto 0px;
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+}
 
+.cabecalho-imagem::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
 
-    .card {
-        flex: 0 0 auto; /* impede que ele se redimensione */
-        width: 260px;   /* tamanho fixo */
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        text-align: center;
-    }
+.cabecalho-imagem {
+    position: relative;
+    z-index: 1;
+}
 
+.cabecalho-texto h2 {
+    font-size: 3rem;
+    color: #4CAF50;
+    margin-bottom: 4px;
+}
 
-    .card img {
-        width: 100%;
-        height: auto;
-    }
+.cabecalho-texto p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
-    .card h3 {
-        margin: 15px 0 10px;
-        color: #4CAF50;
-    }
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 0px 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+    position: relative;
+    /* Para os botões serem posicionados fora do conteúdo */
+    width: 100%;
+}
 
-    .card p {
-        margin: 0 15px 15px;
-        font-size: 0.95rem;
-        color: #555;
-    }
+.card {
+    flex: 0 0 auto;
+    /* Impede que o card se redimensione */
+    width: 260px;
+    /* Tamanho fixo para os cards */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
 
 
-    main {
-        padding: 20px;
-    }
+.card img {
+    width: 100%;
+    height: auto;
+}
 
-    h2 {
-        text-align: center;
-        color: #4CAF50;
-    }
+.card h3 {
+    margin: 15px 0 10px;
+    color: #4CAF50;
+}
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 30px;
-    }
+.card p {
+    margin: 0 15px 15px;
+    font-size: 0.95rem;
+    color: #555;
+}
 
-    th,
-    td {
-        border: 1px solid #ddd;
-        padding: 10px;
-        text-align: center;
-    }
 
-    th {
-        background-color: #f2f2f2;
-    }
 
-    form {
-        background: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px #ccc;
-        margin-bottom: 30px;
-    }
+main {
+    padding: 100px;
+}
 
-    input,
-    textarea,
-    select,
-    button {
-        display: block;
-        width: 100%;
-        margin-top: 10px;
-        padding: 10px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-    }
+h2 {
+    text-align: center;
+    color: #4CAF50;
+}
 
-    button {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        margin-top: 15px;
-        cursor: pointer;
-    }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
 
-    button:hover {
-        background-color: #45a049;
-    }
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
 
-    footer {
-        text-align: center;
-        background: #eee;
-        padding: 10px;
-        font-size: 0.9em;
-    }
-    .formulario-cadastro {
-        background: #F8F5EC;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-        max-width: 450px;
-        margin: 30px auto;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .formulario-cadastro label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-        color: #333;
-        padding-left: 5px;
-    }
-    
-    .formulario-cadastro input,
-    .formulario-cadastro select,
-    .formulario-cadastro button {
-        width: 100%;
-        box-sizing: border-box;
-    
-    }
-    
-    .formulario-cadastro select {
-        background: #fff;
-    }
-    
-    .formulario-cadastro button {
-        background-color: #4CAF50;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    
-    .formulario-cadastro button:hover {
-        background-color: #45a049;
-    }
-    .descricao-cadastro {
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 30px;
-        font-size: 1.1rem;
-        color: #555;
-    }
-        
+th {
+    background-color: #f2f2f2;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+    margin-bottom: 30px;
+}
+
+input,
+textarea,
+select,
+button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    background: #eee;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+.formulario-cadastro {
+    background: #F8F5EC;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 450px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-cadastro label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+    padding-left: 5px;
+}
+
+.formulario-cadastro input,
+.formulario-cadastro select,
+.formulario-cadastro button {
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.formulario-cadastro select {
+    background: #fff;
+}
+
+.formulario-cadastro button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-cadastro button:hover {
+    background-color: #45a049;
+}
+
+.descricao-cadastro {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.img-container img {
+    width: 100%;
+    display: block;
+}
+
+.data-evento {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background-color: #006400;
+    /* verde escuro */
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.centralizar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0;
+}
+
+.caixa-alerta {
+    background-color: #f0dfdf;
+    color: #0a0a0a;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 0px;
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.titulo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.texto {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #000000;
+}
+
+.barra-pesquisa {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.barra-pesquisa input {
+    width: 60%;
+    max-width: 500px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+}
+
+.footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d4ffd4;
+    /* tom mais claro no hover */
+}
+
+.barra-rolagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.scroll-left,
+.scroll-right {
+    background-color: #4CAF50;
+    /* cor verde como na imagem */
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: -30px;
+    /* Posiciona abaixo da lista de cards */
+    z-index: 10;
+}
+
+.scroll-left {
+    left: 20px;
+    /* Distância da esquerda */
+}
+
+.scroll-right {
+    right: 20px;
+    /* Distância da direita */
+}
