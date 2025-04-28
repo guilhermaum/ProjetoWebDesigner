@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="arquivoCSS.css">
 </head>
 
-<body>
-    <header class="cabecalho-imagem">
+<header class="cabecalho-imagem">
     </header>
 
     <section class="cabecalho-texto">
         <h2>Agenda de Eventos - Serra da Ibiapaba</h2>
         <p>Eventos Culturais, Escolares e Esportivos</p>
     </section>
+<body>
+    
 
 
     <main>
@@ -45,17 +46,20 @@
         <div class="barra-pesquisa">
             <input type="text" id="pesquisa" placeholder="Pesquisar eventos..." onkeyup="filtrarEventos()">
         </div>
+        <div class="aviso-clique">
+            Clique nas imagens para ver detalhes
+        </div>        
 
         <div class="barra-rolagem">
             <button class="scroll-left" onclick="scrollEsquerda()">&#10094;</button>
 
             <div class="cards-container">
-                <div class="card">
+                <div class="card" data-url="eventos/mel-cachaca.html">
                     <div class="img-container">
                         <img src="img/MelCachaçaChourinho.png" alt="Festa Cultural da Primavera">
-                        <span class="data-evento">12/06</span>
+                        <span class="data-evento">30/04</span>
                     </div>
-                    <h3>Abertura do Festival Mel, Chourinho e Cachaça</h3>
+                    <h3>Abertura do Festival Mel, Chorinho e Cachaça</h3>
                     <p>Um evento tradicional da região com muita música e degustação de cachaça, em Viçosa.</p>
                 </div>
 
@@ -145,7 +149,7 @@
             <label for="evento">Evento de Interesse:</label>
             <select id="evento" name="evento" required>
                 <option value="">Selecione um evento</option>
-                <option value="mel-cachaca">Abertura do Festival Mel, Chourinho e Cachaça</option>
+                <option value="mel-cachaca">Abertura do Festival Mel, Chorinho e Cachaça</option>
                 <option value="selvagens">Selvagens à Procura de Lei</option>
                 <option value="cachoeiras">Excursão às Cachoeiras</option>
                 <option value="festival-mi">Festival de Música da Ibiapaba</option>

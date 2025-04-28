@@ -32,3 +32,29 @@ function scrollDireita() {
     const container = document.querySelector('.cards-container');
     container.scrollBy({ left: 300, behavior: 'smooth' }); // Ajuste +300 se quiser
 }
+
+function abrirEvento(url) {
+    window.open(url, '_blank'); 
+}
+
+document.querySelectorAll('.card').forEach(card => {
+    let isDragging = false;
+
+    card.addEventListener('mousedown', () => {
+        isDragging = false;
+    });
+
+    card.addEventListener('mousemove', () => {
+        isDragging = true;
+    });
+
+    card.addEventListener('mouseup', () => {
+        if (!isDragging) {
+            // Só redireciona se não tiver arrastado (selecionado texto)
+            const url = card.getAttribute('data-url');
+            if (url) {
+                window.open(url, '_blank');
+            }
+        }
+    });
+});
