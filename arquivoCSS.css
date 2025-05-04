@@ -2,12 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /*background: url('img/imagem.fundo.jpeg') no-repeat center center fixed;*/
     background-color: #f5f5f5;
     background-size: cover;
     color: #F8F5EC;
 }
 
+/* Header */
 .cabecalho-imagem {
     background-image: url('img/Banner_serra.png');
     background-size: cover;
@@ -21,70 +21,61 @@ body {
     justify-content: center;
     align-items: center;
     text-shadow: 1px 1px 3px #000000;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     position: relative;
     z-index: 1;
 }
 
 .cabecalho-texto {
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 10px 12px;
     background-color: #f5f5f5;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin: 0;
 }
 
 .cabecalho-texto h2 {
     font-size: 3rem;
-    font-family: Arial, sans-serif;
     color: #4CAF50;
     padding: 10px 20px;
-    margin: 0 auto 0px;
-    display: inline-block;
+    margin: 0 auto;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    background: none;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-.cabecalho-texto h2 {
-    font-size: 3rem;
-    color: #4CAF50;
-    margin-bottom: 0px;
 }
 
 .cabecalho-texto p {
     font-size: 1.2rem;
     color: #333;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+}
+
+/* Cards e Rolagem */
+.barra-rolagem {
+    position: relative;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
 }
 
 .cards-container {
     display: flex;
-    flex-direction: row;
     overflow-x: auto;
-    gap: 16px;
-    padding: 20px;
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: #ccc transparent;
-    position: relative;
-    max-width: 1050px;
-    margin: 0 auto;
+    gap: 1rem;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+    width: 100%;
 }
 
 .card {
     flex: 0 0 auto;
-    width: 260px;
+    scroll-snap-align: start;
+    width: 250px;
+    border-radius: 12px;
+    padding: 1rem;
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
@@ -110,6 +101,117 @@ body {
     color: #555;
 }
 
+/* Botões de rolagem */
+.scroll-left,
+.scroll-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.scroll-left {
+    left: -40px;
+}
+
+.scroll-right {
+    right: -40px;
+}
+
+/* Formulários */
+form,
+.formulario-cadastro {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 450px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+textarea,
+select,
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.formulario-cadastro label {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+    padding-left: 5px;
+}
+
+/* Extras */
+.descricao-cadastro {
+    text-align: center;
+    margin: 10px 0 30px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+}
+
+.img-container img {
+    width: 100%;
+    display: block;
+}
+
+.data-evento {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background-color: #006400;
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.centralizar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tabelas */
 main {
     padding: 50px;
 }
@@ -135,123 +237,7 @@ th {
     background-color: #f2f2f2;
 }
 
-form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #ccc;
-    margin-bottom: 10px;
-}
-
-input,
-textarea,
-select,
-button {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-
-
-.formulario-cadastro {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-    max-width: 450px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.formulario-cadastro label {
-    display: block;
-    margin-bottom: 5px;
-    margin-top: 20px;
-    font-weight: bold;
-    color: #333;
-    padding-left: 5px;
-}
-
-.formulario-cadastro input,
-.formulario-cadastro select,
-.formulario-cadastro button {
-    width: 100%;
-    box-sizing: border-box;
-
-}
-
-.formulario-cadastro select {
-    background: #fff;
-}
-
-.formulario-cadastro button {
-    background-color: #4CAF50;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.formulario-cadastro button:hover {
-    background-color: #45a049;
-}
-
-.descricao-cadastro {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    color: #555;
-}
-
-.img-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-.img-container img {
-    width: 100%;
-    display: block;
-}
-
-.data-evento {
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    background-color: #006400;
-    color: #fff;
-    padding: 6px 10px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.centralizar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 0;
-}
-
+/* Caixa de alerta */
 .caixa-alerta {
     background-color: #ffffff;
     color: #0a0a0a;
@@ -259,7 +245,7 @@ button:hover {
     border-radius: 12px;
     max-width: 900px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .welcome {
@@ -267,23 +253,22 @@ button:hover {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 0;
 }
 
 .titulo {
     font-size: 30px;
     font-weight: bold;
     color: #4CAF50;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 10px 0 20px;
 }
 
 .texto {
     font-size: 18px;
     line-height: 1.6;
-    color: #000000;
+    color: #000;
 }
 
+/* Barra de pesquisa */
 .barra-pesquisa {
     display: flex;
     justify-content: center;
@@ -299,6 +284,7 @@ button:hover {
     border-radius: 8px;
 }
 
+/* Rodapé */
 .footer {
     background-color: #4CAF50;
     color: white;
@@ -328,48 +314,28 @@ button:hover {
     color: #d4ffd4;
 }
 
-.barra-rolagem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-top: 0px;
-    width: 100%;
-    padding: 0;
-}
+/* Responsividade */
+@media (max-width: 768px) {
+    .scroll-left,
+    .scroll-right {
+        font-size: 1rem;
+        width: 40px;
+        height: 40px;
+    }
 
-.scroll-left,
-.scroll-right {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%); 
-    z-index: 10;
-}
+    .card {
+        width: 200px;
+    }
 
-.scroll-left {
-    left: 300px; 
-}
+    .barra-pesquisa input {
+        width: 90%;
+    }
 
-.scroll-right {
-    right: 300px;
-}
+    .titulo {
+        font-size: 24px;
+    }
 
-.aviso-clique {
-    text-align: center;
-    font-size: 1rem;
-    color: #666;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    .texto {
+        font-size: 16px;
+    }
 }
